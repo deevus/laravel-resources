@@ -7,5 +7,10 @@
             "email": "simon@simonhartcher.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Illuminate\\": "src/Illuminate/"
+        }
+    }
 }
