@@ -22,7 +22,7 @@ trait CollectsResources
         $collects = $this->collects();
 
         if ($collects && ! $resource->first() instanceof $collects) {
-            $this->collection = $resource->mapInto($collects);
+            $this->collection = $this->mapInto($resource, $collects);
         } else {
             $this->collection = $resource->toBase();
         }
@@ -57,5 +57,12 @@ trait CollectsResources
     public function getIterator()
     {
         return $this->collection->getIterator();
+    }
+
+    private function mapInto($collection, $class)
+    {
+        return $collection->map(function ($value, $key) use ($class) {
+            return new $class($value, $key);
+        });
     }
 }
