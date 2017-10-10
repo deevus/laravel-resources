@@ -1,0 +1,11 @@
+{
+    "name": "deevus/laravel-resources",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Simon Hartcher",
+            "email": "simon@simonhartcher.com"
+        }
+    ],
+    "require": {}
+}
